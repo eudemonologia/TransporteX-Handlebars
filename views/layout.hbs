@@ -26,15 +26,27 @@
     {{#if contacto}}
     <link rel="stylesheet" href="css/contacto.css">
     {{/if}}
+    {{#if login}}
+    <link rel="stylesheet" href="css/login.css">
+    {{/if}}
 
     <title>{{title}}</title>
   </head>
 
   <body>
-    <header>
+    <header class="header">
       <div class="holder">
         <img src="images/logo.png" alt="Logo de Transportes X" />
         <h1>Transportes X</h1>
+        {{#unless user}}
+        <a href="/login">
+        <button>Ingresar</button>
+        </a>
+        {{else}}
+        <a href="/login/logout">
+        <button>Salir</button>
+        </a>
+        {{/unless}}
       </div>
     </header>
     <nav>

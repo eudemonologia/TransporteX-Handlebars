@@ -1,28 +1,10 @@
 <h2>Novedades</h2>
-<section class="novedades">
-  <h3>Título</h3>
-  <h4>Subtítulo</h4>
-  <p>Descripción - Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-    Totam quo placeat rem. Similique dolores cupiditate nam eaque, quidem
-    officiis, voluptatibus quos sed, unde repudiandae a illo doloribus placeat
-    quis qui!</p>
-  <hr />
-</section>
-<section class="novedades">
-  <h3>Título</h3>
-  <h4>Subtítulo</h4>
-  <p>Descripción - Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-    Totam quo placeat rem. Similique dolores cupiditate nam eaque, quidem
-    officiis, voluptatibus quos sed, unde repudiandae a illo doloribus placeat
-    quis qui!</p>
-  <hr />
-</section>
-<section class="novedades">
-  <h3>Título</h3>
-  <h4>Subtítulo</h4>
-  <p>Descripción - Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-    Totam quo placeat rem. Similique dolores cupiditate nam eaque, quidem
-    officiis, voluptatibus quos sed, unde repudiandae a illo doloribus placeat
-    quis qui!</p>
-  <hr />
+{{#each articulos}}
+  <article class="novedades">
+    <h3>{{titulo}}</h3>
+    <h4>{{subtitulo}}</h4>
+    <p>{{contenido}}</p>
+    <hr />
+  </article>
+{{/each}}
 </section>
