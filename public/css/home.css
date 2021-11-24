@@ -1,0 +1,59 @@
+.columnas {
+  overflow: hidden;
+  display: flex;
+}
+
+main > img {
+  margin-bottom: 1.5em;
+  width: 100%;
+}
+
+.bienvenidos,
+.testimonios {
+  box-sizing: border-box;
+}
+
+.bienvenidos {
+  width: 75%;
+  padding-right: 2em;
+}
+
+.testimonios {
+  width: 25%;
+}
+
+blockquote {
+  background-color: #ccc;
+  padding: 1em;
+  margin: 0;
+}
+
+blockquote > p {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.4em;
+}
+
+cite {
+  font-size: 0.7em;
+  text-align: center;
+  margin: 1em 0;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .columnas {
+    flex-direction: column;
+  }
+
+  .bienvenidos {
+    width: auto;
+  }
+  .testimonios {
+    width: auto;
+  }
+
+  blockquote > p {
+    text-align: center;
+  }
+}

@@ -1,0 +1,25 @@
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.galeria .foto {
+  flex-basis: 31%;
+  border: 1px solid #ddd;
+  padding: 0.3em;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.galeria .foto img {
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .galeria .foto {
+    flex-basis: 100%;
+  }
+}

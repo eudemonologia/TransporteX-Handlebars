@@ -1,0 +1,63 @@
+<html lang="es">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/root.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    {{#if home}}
+    <link rel="stylesheet" href="css/home.css" />
+    {{/if}}
+    {{#if nosotros}}
+    <link rel="stylesheet" href="css/nosotros.css">
+    {{/if}}
+    {{#if servicios}}
+    <link rel="stylesheet" href="css/servicios.css">
+    {{/if}}
+    {{#if galeria}}
+    <link rel="stylesheet" href="css/galeria.css">
+    {{/if}}
+    {{#if novedades}}
+    <link rel="stylesheet" href="css/novedades.css">
+    {{/if}}
+    {{#if contacto}}
+    <link rel="stylesheet" href="css/contacto.css">
+    {{/if}}
+
+    <title>{{title}}</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="holder">
+        <img src="images/logo.png" alt="Logo de Transportes X" />
+        <h1>Transportes X</h1>
+      </div>
+    </header>
+    <nav>
+      <ul class="holder">
+        <li><a
+            class="{{#if home}}activo{{/if}}"
+            href="/"
+          >Home</a></li>
+        <li><a class="{{#if nosotros}}activo{{/if}}" href="nosotros">Nosotros</a></li>
+        <li><a class="{{#if servicios}}activo{{/if}}" href="servicios">Servicios</a></li>
+        <li><a class="{{#if galeria}}activo{{/if}}" href="galeria">Galeria</a></li>
+        <li><a class="{{#if novedades}}activo{{/if}}" href="novedades">Novedades</a></li>
+        <li><a class="{{#if contacto}}activo{{/if}}" href="contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <main class="holder">
+      {{{body}}}
+    </main>
+    <footer>
+      Diseñado por Flavia Ursino y maqueteado por <a href="https://www.linkedin.com/in/cristiangongora/">Cristian Diego Góngora Pabón</a><br />para la<ahref="https://sceu.frba.utn.edu.ar/e-learning/detalle/diplomatura/1969/diplomatura-en-programacion-web-full-stack-con-react-js"
+        >Diplomatura en programación web full stack con React JS</ahref=>
+        - &copy;2021
+    </footer>
+  </body>
+
+</html>
