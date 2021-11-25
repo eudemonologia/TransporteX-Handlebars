@@ -19,4 +19,7 @@
     />
   </div>
   <button type="submit">INICIAR SESION</button>
+  {{#if error}}
+    <p class="error">{{error}}</p>
+  {{/if}}
 </form>

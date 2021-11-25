@@ -4,6 +4,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var session = require("express-session");
+require("dotenv").config();
 
 var indexRouter = require("./routes/index");
 var nosotrosRouter = require("./routes/nosotros");
@@ -35,6 +36,18 @@ app.use(
   })
 );
 
+secured = async (req, res, next) => {
+  try {
+    if (req.session.user) {
+      next();
+    } else {
+      res.redirect("/login");
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 // Rutas
 app.use("/", indexRouter);
 app.use("/nosotros", nosotrosRouter);
@@ -42,7 +55,7 @@ app.use("/servicios", serviciosRouter);
 app.use("/galeria", galeriaRouter);
 app.use("/novedades", novedadesRouter);
 app.use("/contacto", contactoRouter);
-app.use("/admin", adminRouter);
+app.use("/admin", secured, adminRouter);
 app.use("/login", loginRouter);
 
 // catch 404 and forward to error handler
