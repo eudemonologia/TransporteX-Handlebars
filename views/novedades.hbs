@@ -3,7 +3,13 @@
   <article class="novedades">
     <h3>{{titulo}}</h3>
     <h4>{{subtitulo}}</h4>
+    {{{imagen}}}
     <p>{{contenido}}</p>
+    <h5>{{nombre}}</h5>
+    {{#if ../user}}
+      <a href="/novedades/modificar/{{id_publicaciones}}">Modificar</a>
+      <a href="/novedades/eliminar/{{id_publicaciones}}">Eliminar</a>
+    {{/if}}
     <hr />
   </article>
 {{/each}}

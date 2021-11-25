@@ -4,27 +4,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/root.css" />
-    <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/root.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
     {{#if home}}
-    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="/css/home.css" />
     {{/if}}
     {{#if nosotros}}
-    <link rel="stylesheet" href="css/nosotros.css">
+    <link rel="stylesheet" href="/css/nosotros.css">
     {{/if}}
     {{#if servicios}}
-    <link rel="stylesheet" href="css/servicios.css">
+    <link rel="stylesheet" href="./css/servicios.css">
     {{/if}}
     {{#if galeria}}
-    <link rel="stylesheet" href="css/galeria.css">
+    <link rel="stylesheet" href="/css/galeria.css">
     {{/if}}
     {{#if contacto}}
-    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="/css/contacto.css">
     {{/if}}
     {{#if login}}
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="/css/login.css">
+    {{/if}}
+    {{#if admin}}
+    <link rel="stylesheet" href="/css/admin.css">
+    {{/if}}
+    {{#if modificar}}
+    <link rel="stylesheet" href="/css/modificar.css">
     {{/if}}
 
     <title>{{title}}</title>
@@ -33,13 +39,16 @@
   <body>
     <header class="header">
       <div class="holder">
-        <img src="images/logo.png" alt="Logo de Transportes X" />
+        <img src="/images/logo.png" alt="Logo de Transportes X" />
         <h1>Transportes X</h1>
         {{#unless user}}
-        <a href="/login">
+        <a href="/login" class="separador">
         <button>Ingresar</button>
         </a>
         {{else}}
+        <a href="/admin" class="separador">
+        <button>Admin</button>
+        </a>
         <a href="/login/logout">
         <button>Salir</button>
         </a>
@@ -52,11 +61,11 @@
             class="{{#if home}}activo{{/if}}"
             href="/"
           >Home</a></li>
-        <li><a class="{{#if nosotros}}activo{{/if}}" href="nosotros">Nosotros</a></li>
-        <li><a class="{{#if servicios}}activo{{/if}}" href="servicios">Servicios</a></li>
-        <li><a class="{{#if galeria}}activo{{/if}}" href="galeria">Galeria</a></li>
-        <li><a class="{{#if novedades}}activo{{/if}}" href="novedades">Novedades</a></li>
-        <li><a class="{{#if contacto}}activo{{/if}}" href="contacto">Contacto</a></li>
+        <li><a class="{{#if nosotros}}activo{{/if}}" href="/nosotros">Nosotros</a></li>
+        <li><a class="{{#if servicios}}activo{{/if}}" href="/servicios">Servicios</a></li>
+        <li><a class="{{#if galeria}}activo{{/if}}" href="/galeria">Galeria</a></li>
+        <li><a class="{{#if novedades}}activo{{/if}}" href="/novedades">Novedades</a></li>
+        <li><a class="{{#if contacto}}activo{{/if}}" href="/contacto">Contacto</a></li>
       </ul>
     </nav>
     <main class="holder">

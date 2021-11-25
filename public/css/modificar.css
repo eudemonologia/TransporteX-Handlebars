@@ -1,0 +1,41 @@
+.form__mod label {
+  font-size: 0.9em;
+  vertical-align: top;
+  width: 20%;
+  display: inline-block;
+}
+
+.form__mod input,
+.form__mod textarea {
+  box-sizing: border-box;
+  background-color: #ddd;
+  border-radius: 5px;
+  border: 1px solid #999;
+  padding: 0.4em 0.6em;
+  font-size: 0.8em;
+  width: 70%;
+  margin-bottom: 1rem;
+}
+
+.form__mod a {
+  text-decoration: none;
+}
+
+.form__mod button {
+  display: block;
+  margin: auto;
+  border-radius: 5px;
+  border: none;
+  padding: 0.5em 4em;
+  background-color: #6da9ed;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 1em;
+  width: auto;
+  cursor: pointer;
+}
+
+.form__mod textarea {
+  height: 10em;
+  resize: none;
+}

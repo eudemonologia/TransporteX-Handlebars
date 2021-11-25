@@ -1,3 +1,41 @@
 <h2>Bienvenido, {{user}}</h2>
-<p>Proximamente la posibilidad de publicar contenido.</p>
+<h3>Nuevo publicación:</h3>
+<form class="form__admin" action="" method="POST" enctype="multipart/form-data">
+  <label for="titulo">Titulo:</label>
+  <input type="text" name="titulo" id="titulo" />
+  <label for="subtitulo">Subtitulo:</label>
+  <input type="text" name="subtitulo" id="subtitulo" />
+  <label for="imagen">Imagen:</label>
+  <input type="file" name="imagen" id="imagen" accept="image/*" />
+  <label for="contenido">Contenido:</label>
+  <textarea name="contenido" id="contenido" cols="30" rows="10"></textarea>
+  <button type="submit">Publicar</button>
+</form>
+{{#if error}}
+  <p class="error">{{error}}</p>
+{{/if}}
+<h3>Publicaciones:</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Titulo</th>
+      <th>Subtitulo</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each articulos}}
+      <tr>
+        <td>{{id_publicaciones}}</td>
+        <td>{{titulo}}</td>
+        <td>{{subtitulo}}</td>
+        <td>
+          <a href="/novedades/modificar/{{id_publicaciones}}">Editar</a>
+          <a href="/novedades/eliminar/{{id_publicaciones}}">Eliminar</a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
 <small><a href="./login/logout">Salir de la sesión</a></small>

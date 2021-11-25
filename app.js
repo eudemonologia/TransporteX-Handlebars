@@ -4,6 +4,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var session = require("express-session");
+var fileUpload = require("express-fileupload");
 require("dotenv").config();
 
 var indexRouter = require("./routes/index");
@@ -36,6 +37,7 @@ app.use(
   })
 );
 
+// Middleware para rutas privadas
 secured = async (req, res, next) => {
   try {
     if (req.session.user) {
@@ -47,6 +49,14 @@ secured = async (req, res, next) => {
     console.log(error);
   }
 };
+
+// Middleware para subir archivos
+app.use(
+  fileUpload({
+    useTempFiles: true,
+    tempFileDir: "./tmp/",
+  })
+);
 
 // Rutas
 app.use("/", indexRouter);

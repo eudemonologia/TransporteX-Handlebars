@@ -23,6 +23,7 @@ router.post("/", async (req, res, next) => {
     );
     if (data != undefined) {
       req.session.user = data.nombre;
+      req.session.id_usuario = data.id_usuarios;
       res.redirect("/admin");
     } else {
       res.render("login", {
